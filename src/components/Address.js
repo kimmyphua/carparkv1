@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import {Col, Table, Row} from 'react-bootstrap'
-import SearchForm from "./SearchForm";
 import Axios from "axios";
 import AvailableLot from "./AvailableLot";
 
@@ -19,7 +18,8 @@ function Address({address, free_parking, car_park_type, car_park_no}) {
 
     }, [text]);
 
-    let car = location.filter((dog) => dog.carpark_number === `${car_park_no}`)
+
+    let car = location.filter((all) => all.carpark_number === `${car_park_no}`)
 
     return (
         <div>

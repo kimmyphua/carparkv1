@@ -1,6 +1,9 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Axios from "axios";
-import {Container,Row, Col} from "react-bootstrap";
+import {Container,
+        Row,
+        Col,
+        } from "react-bootstrap";
 import Address from "./Address";
 import SearchForm from "./SearchForm";
 import {
@@ -8,11 +11,11 @@ import {
     withScriptjs,
     GoogleMap,
     Marker,
-    InfoWindow
 } from "react-google-maps";
 import mapStyles from "../styles/mapStyles";
 import Pagination from "./Pagination";
 import mapStylesPink from "../styles/mapStylesPink";
+import Music from "../Music";
 
 
 function Addresses() {
@@ -30,11 +33,14 @@ function Addresses() {
         const [loading, setLoading] = useState(false);
         const [currentPage, setCurrentPage] = useState(1);
         const [postsPerPage] = useState(10);
+        const [showMusic, setShowMusic] = useState(false);
 
-        useEffect(() => {
-            getAddress()
-    }, [text])
+        //show Spotify Music
 
+        const showSpotify = () => setShowMusic(true);
+
+
+        //API calls
         function getAddress(other=false) {
             if(other){
                 setLatLong([])
@@ -58,34 +64,31 @@ function Addresses() {
                 })
         }
 
+        useEffect(() => {
+            getAddress()
+        }, [text])
+
+        //Paginatiom
+
         const indexOfLastPost = currentPage * postsPerPage;
         const indexOfFirstPost = indexOfLastPost - postsPerPage;
         const currentPosts = address.slice(indexOfFirstPost, indexOfLastPost);
         const paginate = pageNumber => setCurrentPage(pageNumber);
 
+
+        //Modal stuff for Google Maps it sucks but meh
         function showAddress(){
-        // for(let i=0; i< address.length; i++){
-        //         alert(address[i].address)
-        // }
             alert("Showing all carparks for" + " " + text)
         }
 
 
         return (
             <div>
-
                     <GoogleMap
                         defaultZoom={10}
                         defaultCenter={{lat: 1.3789, lng: 103.8536}}
                         defaultOptions={{styles: mapStylesPink}}
                     >
-                        {/*<button onClick={() => GoogleMap.defaultProps= {*/}
-                        {/*    options: {*/}
-                        {/*        styles: mapStylesOri*/}
-                        {/*    }*/}
-                        {/*}}*/}
-
-                        {/*> CLick Me</button>*/}
 
                         {latLong.map(({lat, lng}, i) => (
 
@@ -123,6 +126,7 @@ function Addresses() {
                     </GoogleMap>
 
             <Container fluid>
+
                 <Row>
                     <Col md={4} lg={4} className="pt-5">
                         <h6 className="text-center border border-dark border-top-0 pink font-weight-light mt-5 pt-5 px-2">
@@ -136,22 +140,19 @@ function Addresses() {
                         <button className="pb-1 my-2" onClick={refreshPage}> Clear Markers </button>
                             <Row className="py-4 px-2 text-center">
                                 <Col md={6}>
-                                        <img className="twirl" style={ {width: "100%"} }
+                                        <img onClick={showSpotify} className="twirl" style={ {width: "100%"} }
                                                 src="https://lh3.googleusercontent.com/proxy/8xUZSbwT0PNEeMSiW7MsenQsKb6ZGaWqIR24Kjc94hmP_S9aLy7hWAHdDhyvxVYhveStkKqEt1xLYE_k1cu3Kw"
-                                /></Col>
+                                        />
+
+                                </Col>
                                 <Col md={6}>
-                                     Please enjoy some free tunes while browsing the App 🎼
+                                    🎼 Click the Pink Car to enjoy some free tunes while browsing the App 🎼
                                 </Col>
                             </Row>
                         </h6>
-
-                        <iframe className="ml-0" src="https://open.spotify.com/embed/album/51Z21bW6Pc6JRx9Iob7gno" width="100%" height="380" width="100%"
-                        height="380" frameBorder="0" allowTransparency="true" allow="encrypted-media"/>
-
+                        {showMusic ? <Music /> : null}
 
                     </Col>
-
-
                     <Col md={6} lg={6} className="pt-5">
                         <Pagination
                             postsPerPage={postsPerPage}

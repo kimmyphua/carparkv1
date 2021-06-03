@@ -79,3 +79,11 @@ button:hover{
 .twirl:hover {
   animation: App-logo-spin infinite 2s linear;
 }
+
+iframe.none {
+  display: none
+}
+
+iframe.visible {
+  display: block;
+}
