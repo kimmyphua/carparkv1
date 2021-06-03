@@ -45,9 +45,7 @@ function Addresses() {
             if(other){
                 setLatLong([])
             }
-            // let arr= !latLong.length ? [...latLong] : []
-            //  console.log("arr", arr)
-            //  console.log("latlong", latLong)
+
             Axios.get(`https://data.gov.sg/api/action/datastore_search?resource_id=139a3035-e624-4f56-b63f-89ae28d4ae4c&q=${text}`)
                 .then(res => {
                     setAddress(res.data.result.records)
@@ -141,7 +139,7 @@ function Addresses() {
                             <Row className="py-4 px-2 text-center">
                                 <Col md={6}>
                                         <img onClick={showSpotify} className="twirl" style={ {width: "100%"} }
-                                                src="https://lh3.googleusercontent.com/proxy/8xUZSbwT0PNEeMSiW7MsenQsKb6ZGaWqIR24Kjc94hmP_S9aLy7hWAHdDhyvxVYhveStkKqEt1xLYE_k1cu3Kw"
+                                                src="http://www.clker.com/cliparts/8/L/G/W/e/2/lilac-car-md.png"
                                         />
 
                                 </Col>

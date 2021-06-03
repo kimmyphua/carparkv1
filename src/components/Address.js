@@ -12,7 +12,7 @@ function Address({address, free_parking, car_park_type, car_park_no}) {
         const getLocation = async () => {
             const res = await Axios.get(`https://api.data.gov.sg/v1/transport/carpark-availability?`)
             setLocation(res.data.items[0].carpark_data)
-            // console.log(res.components.items[0].carpark_data[0].carpark_number)
+
         }
         getLocation()
 

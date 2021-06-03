@@ -3,7 +3,6 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Addresses from "./components/Addresses";
 import img1 from "./images/clock.png";
-import Axios from "axios";
 import About from "./components/About";
 import React, {useState, useEffect} from "react";
 import {Container, Col, Row} from "react-bootstrap";
@@ -60,7 +59,6 @@ function App() {
                 <Switch>
 
                     <Route path="/" exact>
-
                         <Addresses/>
                         <Container fluid>
                         <Row>
@@ -73,9 +71,9 @@ function App() {
                     <Route path="/mystruggles" exact>
                         <About />
                     </Route>
-                    {/*<Route path="/:term">*/}
-                    {/*  <  />*/}
-                    {/*</Route>*/}
+                    <Route path="/kimmyphua/WhereToPark/">
+                        <Addresses/>
+                    </Route>
                     <Route path="*">
                         Page is not found 404
                     </Route>
