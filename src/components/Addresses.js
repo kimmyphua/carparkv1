@@ -137,7 +137,7 @@ function Addresses() {
 
                                 </Col>
                                 <Col md={6}>
-                                    🎼 Click the <strike>Pink</strike> Lilac Car to enjoy some free tunes while browsing the App 🎼
+                                    🎼 Click the Pusheen to enjoy some free tunes while browsing the App 🎼
                                 </Col>
                             </Row>
                         </h6>
