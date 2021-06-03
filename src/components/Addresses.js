@@ -34,6 +34,7 @@ function Addresses() {
         const [postsPerPage] = useState(10);
         const [showMusic, setShowMusic] = useState(false);
 
+
         //show Spotify Music
         const showSpotify = () => setShowMusic(true);
 
@@ -54,11 +55,15 @@ function Addresses() {
                             })
                     })
                 })
+
         }
 
         useEffect(() => {
             getAddress()
         }, [text])
+
+
+
 
         //Paginatiom
         const indexOfLastPost = currentPage * postsPerPage;
@@ -116,7 +121,7 @@ function Addresses() {
 
                     </GoogleMap>
 
-            <Container fluid>
+            <Container>
 
                 <Row>
                     <Col md={4} lg={4} className="pt-5">
@@ -126,12 +131,13 @@ function Addresses() {
                             Key in your location to check if there are any available lots currently:
                         <SearchForm text={text}
                                     searchText={setText}
+
                         />
 
                         <button className="pb-1 my-2" onClick={refreshPage}> Clear Markers </button>
-                            <Row className="py-4 px-2 text-center">
-                                <Col md={6}>
-                                        <img onClick={showSpotify} className="smallpop" style={ {width: "100%"} }
+                            <Row className="py-4 px-2 w-auto text-center">
+                                <Col md={6} >
+                                        <img onClick={showSpotify} className="smallpop" style={ {width: "auto"} }
                                                 src="https://i.imgur.com/vDZflkF.png"
                                         />
 

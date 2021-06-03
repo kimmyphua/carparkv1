@@ -60,7 +60,7 @@ function App() {
 
                     <Route path="/" exact>
                         <Addresses/>
-                        <Container fluid>
+                        <Container>
                         <Row>
                             <Col md={4} lg={4}>
                                 <h4 className="border border-dark border-bottom-0 text-center pink mt-5 pt-3 px-2"> <Time /> </h4>
