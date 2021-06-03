@@ -5,6 +5,7 @@ function Navigation() {
     return (
         <Navbar bg="light" expand="lg" variant="dark">
             <Container>
+
                 <Navbar.Brand className="text-dark" to="/" >Where to Park?!</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -14,7 +15,8 @@ function Navigation() {
 
                     </Nav>
                 </Navbar.Collapse>
-            </Container>
+                <Navbar.Brand className="text-dark" to="/" >♡ by kimberly</Navbar.Brand>  </Container>
+
         </Navbar>
     );
 }

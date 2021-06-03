@@ -67,7 +67,7 @@ button:hover{
 }
 
 
-h5:hover {
+.pop:hover {
   transition: width 100ms ease-in-out, height 100ms ease-in-out;
   transform: scale(2)
 }
@@ -76,6 +76,6 @@ h5:hover {
   background: lightpink;
 }
 
-img:hover {
+.twirl:hover {
   animation: App-logo-spin infinite 2s linear;
 }

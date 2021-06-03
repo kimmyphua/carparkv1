@@ -7,27 +7,19 @@ import AvailableLot from "./AvailableLot";
 function Address({address, free_parking, car_park_type, car_park_no}) {
     const [location, setLocation] = useState([])
     const [text, setText] = useState('C20')
-    // const [car, setCar] = useState([])
-
 
     useEffect(() => {
 
         const getLocation = async () => {
             const res = await Axios.get(`https://api.data.gov.sg/v1/transport/carpark-availability?`)
             setLocation(res.data.items[0].carpark_data)
-            // console.log(res.data.items[0].carpark_data[0].carpark_number)
+            // console.log(res.components.items[0].carpark_data[0].carpark_number)
         }
         getLocation()
 
     }, [text]);
 
     let car = location.filter((dog) => dog.carpark_number === `${car_park_no}`)
-    // console.log("car", car)
-    // console.log("location", location)
-    // console.log("location", location.[0])
-    // console.log("address", address)
-
-
 
     return (
         <div>

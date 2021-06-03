@@ -4,7 +4,7 @@ export default [
     elementType: "geometry",
     stylers: [
       {
-        color: "#7bc6dc"
+        color: "#004358"
       }
     ]
   },
@@ -13,7 +13,7 @@ export default [
     elementType: "geometry",
     stylers: [
       {
-        color: "#d290bc"
+        color: "#1f8a70"
       }
     ]
   },
@@ -22,7 +22,7 @@ export default [
     elementType: "geometry",
     stylers: [
       {
-        color: "#5c0947"
+        color: "#1f8a70"
       }
     ]
   },
@@ -31,7 +31,7 @@ export default [
     elementType: "geometry",
     stylers: [
       {
-        color: "#cd4cad"
+        color: "#fd7400"
       }
     ]
   },
@@ -63,7 +63,7 @@ export default [
     elementType: "labels.text.stroke",
     stylers: [
       {
-        color: "#020101"
+        color: "#ffffff"
       },
       {
         visibility: "on"
@@ -106,7 +106,7 @@ export default [
     elementType: "geometry",
     stylers: [
       {
-        color: "#92167d"
+        color: "#1f8a70"
       },
       {
         lightness: -10
@@ -119,7 +119,7 @@ export default [
     elementType: "geometry",
     stylers: [
       {
-        color: "#ef59b8"
+        color: "#1f8a70"
       },
       {
         weight: 0.7

@@ -1,8 +1,8 @@
 import React from 'react';
 
 
-function AvailableLot({carparkNumber, carparkInfo}) {
-    // console.log(carparkInfo[0].total_lots)
+function AvailableLot({carparkInfo}) {
+
     return (
 
         <div className="font-weight-light my-2 py-2 text-center pink">

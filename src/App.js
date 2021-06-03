@@ -1,10 +1,10 @@
 import './App.css';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import Navigation from "./Navigation";
-import Addresses from "./Addresses";
+import Navigation from "./components/Navigation";
+import Addresses from "./components/Addresses";
 import img1 from "./images/clock.png";
 import Axios from "axios";
-import About from "./About";
+import About from "./components/About";
 import React, {useState, useEffect} from "react";
 import {Container, Col, Row} from "react-bootstrap";
 
