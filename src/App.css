@@ -72,18 +72,15 @@ button:hover{
   transform: scale(2)
 }
 
+.smallpop:hover {
+  transition: width 100ms ease-in-out, height 100ms ease-in-out;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
 .pink {
   background: lightpink;
 }
 
-.twirl:hover {
-  animation: App-logo-spin infinite 2s linear;
-}
 
-iframe.none {
-  display: none
-}
 
-iframe.visible {
-  display: block;
-}

@@ -2,13 +2,12 @@ import React, {useState} from 'react';
 
 
 
-function SearchForm({ setLatLong, searchText, getAddress}) {
+function SearchForm({searchText, getAddress}) {
     const [textForSearch, setTextForSearch] = useState('')
 
     function handleSubmit(e){
         e.preventDefault()
         searchText(textForSearch)
-        getAddress(true)
 
     }
 

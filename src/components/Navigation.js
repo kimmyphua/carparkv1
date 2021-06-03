@@ -6,16 +6,18 @@ function Navigation() {
         <Navbar bg="light" expand="lg" variant="dark">
             <Container>
 
-                <Navbar.Brand className="text-dark" to="/" >Where to Park?!</Navbar.Brand>
+                <img style={ {width: "5%" }} src="https://i.imgur.com/yKpKiPIs.png"  />
+
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <NavLink to="/" className="highlight text-dark nav-link">Home</NavLink>
-                        <NavLink to="/mystruggles" className="highlight text-dark nav-link">About</NavLink>
+                    <Nav className="mx-3">
+                        <NavLink to="/" className="highlight border border-1 text-dark nav-link mx-3">Home</NavLink>
+                        <NavLink to="/mystruggles" className="highlight border border-1 text-dark nav-link">About</NavLink>
 
                     </Nav>
                 </Navbar.Collapse>
-                <Navbar.Brand className="text-dark" to="/" >♡ by kimberly</Navbar.Brand>  </Container>
+                <Navbar.Brand className="text-dark" to="/" >♡ by kimberly</Navbar.Brand>
+            </Container>
 
         </Navbar>
     );

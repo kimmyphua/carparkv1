@@ -71,7 +71,7 @@ function App() {
                     <Route path="/mystruggles" exact>
                         <About />
                     </Route>
-                    <Route path="/kimmyphua/WhereToPark/">
+                    <Route path="/kimmyphua/WhereToPark">
                         <Addresses/>
                     </Route>
                     <Route path="*">

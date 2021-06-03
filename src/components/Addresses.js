@@ -30,26 +30,20 @@ function Addresses() {
         const [text, setText] = useState("null")
         const [address, setAddress] = useState([])
         const [latLong, setLatLong] = useState([])
-        const [loading, setLoading] = useState(false);
         const [currentPage, setCurrentPage] = useState(1);
         const [postsPerPage] = useState(10);
         const [showMusic, setShowMusic] = useState(false);
 
         //show Spotify Music
-
         const showSpotify = () => setShowMusic(true);
 
 
         //API calls
-        function getAddress(other=false) {
-            if(other){
-                setLatLong([])
-            }
+        function getAddress() {
 
             Axios.get(`https://data.gov.sg/api/action/datastore_search?resource_id=139a3035-e624-4f56-b63f-89ae28d4ae4c&q=${text}`)
                 .then(res => {
                     setAddress(res.data.result.records)
-
                     res.data.result.records.forEach((add) => {
                         Axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${add.address}&key=AIzaSyAKPMPbh_3SfeWejrnsrnbNaOdfEZboS4I`)
                             .then( res1 =>  {
@@ -67,7 +61,6 @@ function Addresses() {
         }, [text])
 
         //Paginatiom
-
         const indexOfLastPost = currentPage * postsPerPage;
         const indexOfFirstPost = indexOfLastPost - postsPerPage;
         const currentPosts = address.slice(indexOfFirstPost, indexOfLastPost);
@@ -131,20 +124,20 @@ function Addresses() {
 
                             Find your nearest carpark locations!
                             Key in your location to check if there are any available lots currently:
-                        <SearchForm text={text} searchText={setText}
-                                    getAddress={getAddress}
+                        <SearchForm text={text}
+                                    searchText={setText}
                         />
 
                         <button className="pb-1 my-2" onClick={refreshPage}> Clear Markers </button>
                             <Row className="py-4 px-2 text-center">
                                 <Col md={6}>
-                                        <img onClick={showSpotify} className="twirl" style={ {width: "100%"} }
-                                                src="http://www.clker.com/cliparts/8/L/G/W/e/2/lilac-car-md.png"
+                                        <img onClick={showSpotify} className="smallpop" style={ {width: "100%"} }
+                                                src="https://i.imgur.com/vDZflkF.png"
                                         />
 
                                 </Col>
                                 <Col md={6}>
-                                    🎼 Click the Pink Car to enjoy some free tunes while browsing the App 🎼
+                                    🎼 Click the <strike>Pink</strike> Lilac Car to enjoy some free tunes while browsing the App 🎼
                                 </Col>
                             </Row>
                         </h6>

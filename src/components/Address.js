@@ -32,8 +32,9 @@ function Address({address, free_parking, car_park_type, car_park_no}) {
                     <p className="font-weight-light">Car Park Number: {car_park_no}</p>
             </Col>
                 <Col md={4}>
-                    {car.map(({ carpark_info}) => (
+                    {car.map(({ carpark_info},i) => (
                         <AvailableLot
+                            key={i}
                             carparkInfo={carpark_info}
                         />
                     ))}
